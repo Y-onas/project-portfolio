@@ -658,9 +658,9 @@ p {
 
 /* Media Queries for Hero Section */
 @media screen and (max-width: 1200px) {
-  
   .hero {
     padding: 40px 80px;
+    position: relative;
   }
 
   .hero-text {
@@ -689,15 +689,6 @@ p {
     top: 50%;
     transform: translateY(-50%);
   }
-
-
-  .projects {
-    margin-bottom: 20px ;  
-  }
-}
-
-
-
 
   .projects > .background-container,
   .dots,
@@ -792,9 +783,6 @@ p {
     font-size: 72px;
   }
 }
-
-
-
 
 @media screen and (max-width: 992px) {
   .hero {
