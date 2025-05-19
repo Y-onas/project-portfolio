@@ -30,11 +30,37 @@ document.addEventListener("DOMContentLoaded", () => {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    // Get form inputs
+    const nameInput = contactForm.querySelector(".name-input input");
+    const emailInput = contactForm.querySelector(".email-input input");
+    const messageInput = contactForm.querySelector(".message-area textarea");
+
+    // Reset previous error states
+    nameInput.classList.remove("error");
+    emailInput.classList.remove("error");
+
+    // Validate inputs
+    let isValid = true;
+
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add("error");
+      isValid = false;
+    }
+
+    if (!emailInput.value.trim()) {
+      emailInput.classList.add("error");
+      isValid = false;
+    }
+
+    if (!isValid) {
+      return; // Stop form submission if validation fails
+    }
+
     // Get form data
     const formData = {
-      name: contactForm.querySelector(".name-input input").value,
-      email: contactForm.querySelector(".email-input input").value,
-      message: contactForm.querySelector(".message-area textarea").value,
+      name: nameInput.value,
+      email: emailInput.value,
+      message: messageInput.value,
     };
 
     // Log form data to console

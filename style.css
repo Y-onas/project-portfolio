@@ -552,6 +552,33 @@ p {
   color: rgba(26, 34, 54, 0.4);
 }
 
+.contact input.error,
+.contact textarea.error {
+  border-color: #ff3b3b;
+  background-color: rgba(255, 59, 59, 0.1);
+}
+
+.contact input.error::placeholder,
+.contact textarea.error::placeholder {
+  color: #ff3b3b;
+}
+
+.contact .name-input::after,
+.contact .email-input::after {
+  content: "This field is required";
+  color: #ff3b3b;
+  font-size: 12px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  display: none;
+}
+
+.contact .name-input input.error ~ .name-input::after,
+.contact .email-input input.error ~ .email-input::after {
+  display: block;
+}
+
 .contact button {
   grid-column: 1 / -1;
   justify-self: center;
