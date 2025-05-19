@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === Close Button Click Event (redirect to main page) ===
   closeButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      window.location.href = "/"; // <-- Change to your main page path if different
+      window.location.href = "../index.html"; // Changed from "/" to "../index.html"
     });
   });
 
